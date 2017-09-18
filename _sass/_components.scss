@@ -113,13 +113,15 @@ code {
     th,
     td {
       padding: $spacer-2 $spacer-3 $spacer-2 2px;
-      border-top: 1px solid $color-body-text;
-      border-bottom: 1px solid $color-body-text;
+      border-top: 1px solid rgba($color-body-text, 0.05);
+      // border-top: 1px solid $color-body-text;
+      // border-bottom: 1px solid $color-body-text;
+
     }
 
     tr {
       background-color: #fff;
-      border-top: 1px solid $color-body-text;
+      border-top: 1px solid rgba($color-body-text, 0.05);
     }
 
     tr th {
