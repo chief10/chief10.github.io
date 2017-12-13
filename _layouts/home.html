@@ -13,11 +13,24 @@
           <ul class="list-reset right py-1 header-text font-smoothing">
             {% for my_page in site.pages %}
               {% if my_page.title %}
-              <li class="inline-block">
-                <a class="align-middle link-primary header-link mr-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-              </li>
+                {% if my_page.layout == "page" %}
+                <li class="inline-block">
+                  <a class="align-middle link-primary header-link mr-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+                </li>
+                {% endif %}
               {% endif %}
             {% endfor %}
+            <li class="inline-block menu-graphs">
+              <span>Graphs</span>
+              <ul class="menu-graphs-list">
+                 {% for graph in site.graph-pages %}
+                <li class="menu-graph-list-item">
+                  <img src="/assets/imgs/{{graph.custom_js}}_thumbnail.png" alt="">
+                  <a href="{{graph.permalink}}"> {{graph.title}}</a>
+                </li>
+                 {% endfor %}
+              </ul>
+            </li>
           </ul>
         </div>
 

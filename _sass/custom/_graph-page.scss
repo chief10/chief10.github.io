@@ -1,0 +1,10 @@
+#graph-area > svg{
+  margin: 0 auto;
+  display: block;
+}
+
+@media(max-width: 450px) {
+  #graph-area svg text {
+    font-size: 0.55rem;
+  }
+}

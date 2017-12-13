@@ -24,9 +24,12 @@ github_username:  chief10
 # Build settings
 markdown: kramdown
 theme: swiss
-include: ["_pages"]
+include: ["_graph-pages"]
 plugins:
   - jekyll-feed
+
+collections:
+  - graph-pages
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

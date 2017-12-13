@@ -1,0 +1,56 @@
+.menu-graphs {
+  position: relative;
+
+  span {
+    padding: 2px;
+    border-radius: 2px 2px 0px 0px;
+    padding-bottom: 13px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  ul.menu-graphs-list {
+    position: absolute;
+    list-style-type: none;
+    min-width: 300px;
+    padding: 3px;
+    right: 0px;
+    margin-top: 10px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: transparent;
+    transition: all 0.35s;
+  }
+
+  li.menu-graph-list-item {
+    display: flex; 
+    justify-content: space-between;
+
+    img {
+      display: block;
+      width: 50px;
+      height: 50px;
+      margin-right: 5px;
+    }
+  } 
+
+  &:hover {
+    ul.menu-graphs-list {
+      visibility: visible;
+      opacity: 1;
+      background-color: white;
+      transition: all 0.35s;
+      li {
+        color: black;
+      }
+    }
+
+    span {
+      background-color: white;
+      color: black;
+      transition: all 0.2s;
+      // padding: 2px;
+      // padding-bottom: 10px;
+    }
+  }
+}
