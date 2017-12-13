@@ -24,6 +24,7 @@ github_username:  chief10
 # Build settings
 markdown: kramdown
 theme: swiss
+include: ["_pages"]
 plugins:
   - jekyll-feed
 
