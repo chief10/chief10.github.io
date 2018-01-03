@@ -99,3 +99,8 @@ git commit
 To remove whitespace from diffs, add `?w=1` to the end of the url. For example:
 https://github.com/ClickTripz/clicktripz.web/pull/2891/files becomes
 https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
+
+### Mongo Shell Commands
+
+`mongodump -d dbName -o /dir/to/output/data`
+- Backs up a mongodb database "dbName"
