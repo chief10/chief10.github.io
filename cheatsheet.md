@@ -88,6 +88,9 @@ option + tab
  `git checkout 88h2372h file/to/restore`
 -   Restores a file to where it was in commit 88h2372h
 
+`git fetch origin pull/ID/head:BRANCHNAME`
+- Where `id` is equal to the PR ID
+
 When you make changes you want to revert.
 http://stackoverflow.com/questions/4114095/how-to-revert-git-repository-to-a-previous-commit
 git revert --no-commit 0766c053..HEAD
