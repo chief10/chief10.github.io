@@ -58,7 +58,7 @@ option + tab
 
 
 ### Git commands
- `git commit —amend -no-edit`
+ `git commit -—amend --no-edit`
  - Allows you to add additional files to your last commit.
 
  `git checkout origin/master filename`
