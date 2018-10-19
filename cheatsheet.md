@@ -109,4 +109,10 @@ https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
 - Backs up a mongodb database "dbName"
 
 
-## Testing. Is GH saving my changes?
+### Postgres
+
+`\l`
+- List tables
+
+`DROP DATABASE [IF EXISTS] name;`
+- Drops a specific database.
