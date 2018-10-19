@@ -116,3 +116,13 @@ https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
 
 `DROP DATABASE [IF EXISTS] name;`
 - Drops a specific database.
+
+`\c [DATABASE NAME]`
+- Connect to specific database shown in `\l` list.
+
+`\dt`
+- Show tables in database after one connects to it.
+
+`\d [TABLE NAME]`
+- After connecting to a specific database, this will show a snapshot of what's in it.
+
