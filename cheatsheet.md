@@ -135,3 +135,9 @@ https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
 `Cmd + Shift + E`
 - Show file tree in sidebar.
 
+
+### OSX
+
+`Ctrl + Cmd + Q`
+- Quick sleep
+
