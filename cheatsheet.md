@@ -126,3 +126,9 @@ https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
 `\d [TABLE NAME]`
 - After connecting to a specific database, this will show a snapshot of what's in it.
 
+
+### VSCode
+
+`Ctrl + Cmd + →/←`
+- Move current tab to different split.
+
