@@ -132,3 +132,6 @@ https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
 `Ctrl + Cmd + →/←`
 - Move current tab to different split.
 
+`Cmd + Shift + E`
+- Show file tree in sidebar.
+
