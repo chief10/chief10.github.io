@@ -135,6 +135,8 @@ https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
 `Cmd + Shift + E`
 - Show file tree in sidebar.
 
+`Cmd + Shift + \`
+- Jump to matching bracket.
 
 ### OSX
 
