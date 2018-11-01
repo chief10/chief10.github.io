@@ -138,6 +138,9 @@ https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
 `Cmd + Shift + \`
 - Jump to matching bracket.
 
+`Ctrl + Shift + G`
+- Show Git in sidebar.
+
 ### OSX
 
 `Ctrl + Cmd + Q`
