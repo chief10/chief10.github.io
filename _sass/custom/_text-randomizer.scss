@@ -1,0 +1,33 @@
+#graph-area {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    padding-left: 25px;
+};
+
+#board {
+    min-width: 500px;
+    max-width: 800px;
+}
+
+.font-1 { font-family: 'Roboto', sans-serif; }
+.font-2 { font-family: 'Srisakdi', cursive; }
+.font-3 { font-family: 'ZCOOL QingKe HuangYou', cursive; }
+.font-4 { font-family: 'Playfair Display', serif; }
+.font-5 { font-family: 'Source Serif Pro', serif; }
+
+.color-combo-1 { background-color: rgba(0, 0, 0, 0.8); color: white; }
+.color-combo-2 { background-color: #AD2A1A; color: rgba(255,255,255, 0.9); }
+.color-combo-3 { background-color: yellow; color: blue; }
+.color-combo-4 { background-color: blue; color: yellow; }
+.color-combo-5 { background-color: gray; color: whitesmoke; }
+.color-combo-6 { background-color: #f5d67b; color: #aa7ee1; }
+.color-combo-7 { background-color: #001628; color: #aa7ee1; }
+.color-combo-8 { background-color: #001628; color: #f5d67b; }
+
+
+p { display: inline-block; }
+span { display: inline-block; }
+svg { display: block; }
+
+#board { line-height: 45px; }

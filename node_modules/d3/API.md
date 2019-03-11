@@ -1,6 +1,6 @@
 # D3 API Reference
 
-D3 4.0 is a [collection of modules](https://github.com/d3) that are designed to work together; you can use the modules independently, or you can use them together as part of the default build. The source and documentation for each module is available in its repository. Follow the links below to learn more. For changes between 3.x and 4.0, see [CHANGES](https://github.com/d3/d3/blob/master/CHANGES.md); see also the [3.x reference](https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md).
+D3 is a [collection of modules](https://github.com/d3) that are designed to work together; you can use the modules independently, or you can use them together as part of the default build. The source and documentation for each module is available in its repository. Follow the links below to learn more. For changes between major versions, see [CHANGES](https://github.com/d3/d3/blob/master/CHANGES.md); see also the [release notes](https://github.com/d3/d3/releases) and the [3.x reference](https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md).
 
 * [Arrays](#arrays-d3-array) ([Statistics](#statistics), [Search](#search), [Transformations](#transformations), [Histograms](#histograms))
 * [Axes](#axes-d3-axis)
@@ -8,10 +8,13 @@ D3 4.0 is a [collection of modules](https://github.com/d3) that are designed to 
 * [Chords](#chords-d3-chord)
 * [Collections](#collections-d3-collection) ([Objects](#objects), [Maps](#maps), [Sets](#sets), [Nests](#nests))
 * [Colors](#colors-d3-color)
+* [Color Schemes](#color-schemes-d3-scale-chromatic)
+* [Contours](#contours-d3-contour)
 * [Dispatches](#dispatches-d3-dispatch)
 * [Dragging](#dragging-d3-drag)
 * [Delimiter-Separated Values](#delimiter-separated-values-d3-dsv)
 * [Easings](#easings-d3-ease)
+* [Fetches](#fetches-d3-fetch)
 * [Forces](#forces-d3-force)
 * [Number Formats](#number-formats-d3-format)
 * [Geographies](#geographies-d3-geo) ([Paths](#paths), [Projections](#projections), [Spherical Math](#spherical-math), [Spherical Shapes](#spherical-shapes), [Streams](#streams), [Transforms](#transforms))
@@ -20,10 +23,8 @@ D3 4.0 is a [collection of modules](https://github.com/d3) that are designed to 
 * [Paths](#paths-d3-path)
 * [Polygons](#polygons-d3-polygon)
 * [Quadtrees](#quadtrees-d3-quadtree)
-* [Queues](#queues-d3-queue)
 * [Random Numbers](#random-numbers-d3-random)
-* [Requests](#requests-d3-request)
-* [Scales](#scales-d3-scale) ([Continuous](#continuous-scales), [Sequential](#sequential-scales), [Quantize](#quantize-scales), [Ordinal](#ordinal-scales))
+* [Scales](#scales-d3-scale) ([Continuous](#continuous-scales), [Sequential](#sequential-scales), [Diverging](#diverging-scales), [Quantize](#quantize-scales), [Ordinal](#ordinal-scales))
 * [Selections](#selections-d3-selection) ([Selecting](#selecting-elements), [Modifying](#modifying-elements), [Data](#joining-data), [Events](#handling-events), [Control](#control-flow), [Local Variables](#local-variables), [Namespaces](#namespaces))
 * [Shapes](#shapes-d3-shape) ([Arcs](#arcs), [Pies](#pies), [Lines](#lines), [Areas](#areas), [Curves](#curves), [Links](#links), [Symbols](#symbols), [Stacks](#stacks))
 * [Time Formats](#time-formats-d3-time-format)
@@ -212,12 +213,126 @@ Color manipulation and color space conversion.
 * [*color*.brighter](https://github.com/d3/d3-color/blob/master/README.md#color_brighter) - create a brighter copy of this color.
 * [*color*.darker](https://github.com/d3/d3-color/blob/master/README.md#color_darker) - create a darker copy of this color.
 * [*color*.displayable](https://github.com/d3/d3-color/blob/master/README.md#color_displayable) - returns true if the color is displayable on standard hardware.
-* [*color*.toString](https://github.com/d3/d3-color/blob/master/README.md#color_toString) - format the color as an RGB hexadecimal string.
+* [*color*.hex](https://github.com/d3/d3-color/blob/master/README.md#color_hex) - returns the hexadecimal RGB string representation of this color.
+* [*color*.toString](https://github.com/d3/d3-color/blob/master/README.md#color_toString) - returns the RGB string representation of this color.
 * [d3.rgb](https://github.com/d3/d3-color/blob/master/README.md#rgb) - create a new RGB color.
 * [d3.hsl](https://github.com/d3/d3-color/blob/master/README.md#hsl) - create a new HSL color.
 * [d3.lab](https://github.com/d3/d3-color/blob/master/README.md#lab) - create a new Lab color.
 * [d3.hcl](https://github.com/d3/d3-color/blob/master/README.md#hcl) - create a new HCL color.
+* [d3.lch](https://github.com/d3/d3-color/blob/master/README.md#lch) - create a new HCL color.
+* [d3.gray](https://github.com/d3/d3-color/blob/master/README.md#gray) - create a new Lab gray.
 * [d3.cubehelix](https://github.com/d3/d3-color/blob/master/README.md#cubehelix) - create a new Cubehelix color.
+
+## [Color Schemes (d3-scale-chromatic)](https://github.com/d3/d3-scale-chromatic)
+
+Color ramps and palettes for quantitative, ordinal and categorical scales.
+
+### Categorical
+
+* [d3.schemeCategory10](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeCategory10) -
+* [d3.schemeAccent](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeAccent) -
+* [d3.schemeDark2](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeDark2) -
+* [d3.schemePaired](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePaired) -
+* [d3.schemePastel1](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePastel1) -
+* [d3.schemePastel2](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePastel2) -
+* [d3.schemeSet1](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeSet1) -
+* [d3.schemeSet2](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeSet2) -
+* [d3.schemeSet3](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeSet3) -
+
+### Diverging
+
+* [d3.interpolateBrBG](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolatePiYG](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolatePRGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolatePuOr](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateRdBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateRdGy](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateRdYlBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateRdYlGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateSpectral](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.schemeBrBG](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeBrBG) -
+* [d3.schemePiYG](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePiYG) -
+* [d3.schemePRGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePRGn) -
+* [d3.schemePuOr](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePuOr) -
+* [d3.schemeRdBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeRdBu) -
+* [d3.schemeRdGy](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeRdGy) -
+* [d3.schemeRdYlBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeRdYlBu) -
+* [d3.schemeRdYlGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeRdYlGn) -
+* [d3.schemeSpectral](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeSpectral) -
+
+### Sequential (Single Hue)
+
+* [d3.interpolateBlues](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateGreens](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateGreys](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateOranges](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolatePurples](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateReds](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.schemeBlues](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeBlues) -
+* [d3.schemeGreens](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeGreens) -
+* [d3.schemeGreys](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeGreys) -
+* [d3.schemeOranges](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeOranges) -
+* [d3.schemePurples](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePurples) -
+* [d3.schemeReds](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeReds) -
+
+### Sequential (Multi-Hue)
+
+* [d3.interpolateBuGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateBuPu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateCool](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateCubehelixDefault](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateGnBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateInferno](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateMagma](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateOrRd](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolatePlasma](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolatePuBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolatePuBuGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolatePuRd](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateRdPu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateViridis](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateWarm](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateYlGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateYlGnBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateYlOrBr](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.interpolateYlOrRd](https://github.com/d3/d3-scale-chromatic/blob/master/README.md) -
+* [d3.schemeBuGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeBuGn) -
+* [d3.schemeBuPu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeBuPu) -
+* [d3.schemeGnBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeGnBu) -
+* [d3.schemeOrRd](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeOrRd) -
+* [d3.schemePuBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePuBu) -
+* [d3.schemePuBuGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePuBuGn) -
+* [d3.schemePuRd](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemePuRd) -
+* [d3.schemeRdPu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeRdPu) -
+* [d3.schemeYlGn](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeYlGn) -
+* [d3.schemeYlGnBu](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeYlGnBu) -
+* [d3.schemeYlOrBr](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeYlOrBr) -
+* [d3.schemeYlOrRd](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#schemeYlOrRd) -
+
+### Cyclical
+
+* [d3.interpolateRainbow](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#interpolateRainbow) - the “less-angry” rainbow
+* [d3.interpolateSinebow](https://github.com/d3/d3-scale-chromatic/blob/master/README.md#interpolateSinebow) - the “sinebow” smooth rainbow
+
+## [Contours (d3-contour)](https://github.com/d3/d3-contour)
+
+Compute contour polygons using marching squares.
+
+* [d3.contours](https://github.com/d3/d3-contour/blob/master/README.md#contours) - create a new contour generator.
+* [contours](https://github.com/d3/d3-contour/blob/master/README.md#_contours) - compute the contours for a given grid of values.
+* [contours.contour](https://github.com/d3/d3-contour/blob/master/README.md#contours_contour) -
+* [contours.size](https://github.com/d3/d3-contour/blob/master/README.md#contours_size) -
+* [contours.smooth](https://github.com/d3/d3-contour/blob/master/README.md#contours_smooth) -
+* [contours.thresholds](https://github.com/d3/d3-contour/blob/master/README.md#contours_thresholds) -
+* [d3.contourDensity](https://github.com/d3/d3-contour/blob/master/README.md#contourDensity) - create a new density estimator.
+* [density](https://github.com/d3/d3-contour/blob/master/README.md#_density) - estimate the density of a given array of samples.
+* [density.x](https://github.com/d3/d3-contour/blob/master/README.md#density_x) -
+* [density.y](https://github.com/d3/d3-contour/blob/master/README.md#density_y) -
+* [density.size](https://github.com/d3/d3-contour#density_size) -
+* [density.cellSize](https://github.com/d3/d3-contour/blob/master/README.md#density_cellSize) -
+* [density.thresholds](https://github.com/d3/d3-contour/blob/master/README.md#density_thresholds) -
+* [density.bandwidth](https://github.com/d3/d3-contour/blob/master/README.md#density_bandwidth) -
+* [density.weight](https://github.com/d3/d3-contour/blob/master/README.md#density_weight) -
 
 ## [Dispatches (d3-dispatch)](https://github.com/d3/d3-dispatch)
 
@@ -253,14 +368,18 @@ Parse and format delimiter-separated values, most commonly CSV and TSV.
 * [*dsv*.parse](https://github.com/d3/d3-dsv/blob/master/README.md#dsv_parse) - parse the given string, returning an array of objects.
 * [*dsv*.parseRows](https://github.com/d3/d3-dsv/blob/master/README.md#dsv_parseRows) - parse the given string, returning an array of rows.
 * [*dsv*.format](https://github.com/d3/d3-dsv/blob/master/README.md#dsv_format) - format the given array of objects.
+* [*dsv*.formatBody](https://github.com/d3/d3-dsv/blob/master/README.md#dsv_formatBody) - format the given array of objects.
 * [*dsv*.formatRows](https://github.com/d3/d3-dsv/blob/master/README.md#dsv_formatRows) - format the given array of rows.
+* [d3.autoType](https://github.com/d3/d3-dsv/blob/master/README.md#autoType) - automatically infer value types for the given object.
 * [d3.csvParse](https://github.com/d3/d3-dsv/blob/master/README.md#csvParse) - parse the given CSV string, returning an array of objects.
 * [d3.csvParseRows](https://github.com/d3/d3-dsv/blob/master/README.md#csvParseRows) - parse the given CSV string, returning an array of rows.
 * [d3.csvFormat](https://github.com/d3/d3-dsv/blob/master/README.md#csvFormat) - format the given array of objects as CSV.
+* [d3.csvFormatBody](https://github.com/d3/d3-dsv/blob/master/README.md#csvFormatBody) - format the given array of objects as CSV.
 * [d3.csvFormatRows](https://github.com/d3/d3-dsv/blob/master/README.md#csvFormatRows) - format the given array of rows as CSV.
 * [d3.tsvParse](https://github.com/d3/d3-dsv/blob/master/README.md#tsvParse) - parse the given TSV string, returning an array of objects.
 * [d3.tsvParseRows](https://github.com/d3/d3-dsv/blob/master/README.md#tsvParseRows) - parse the given TSV string, returning an array of rows.
 * [d3.tsvFormat](https://github.com/d3/d3-dsv/blob/master/README.md#tsvFormat) - format the given array of objects as TSV.
+* [d3.tsvFormatBody](https://github.com/d3/d3-dsv/blob/master/README.md#tsvFormatBody) - format the given array of objects as TSV.
 * [d3.tsvFormatRows](https://github.com/d3/d3-dsv/blob/master/README.md#tsvFormatRows) - format the given array of rows as TSV.
 
 ## [Easings (d3-ease)](https://github.com/d3/d3-ease)
@@ -308,6 +427,19 @@ Easing functions for smooth animation.
 * [d3.easeBounceIn](https://github.com/d3/d3-ease/blob/master/README.md#easeBounceIn) - bounce easing, like a rubber ball.
 * [d3.easeBounceOut](https://github.com/d3/d3-ease/blob/master/README.md#easeBounceOut) - reverse bounce easing.
 * [d3.easeBounceInOut](https://github.com/d3/d3-ease/blob/master/README.md#easeBounceInOut) - symmetric bounce easing.
+
+## [Fetches (d3-fetch)](https://github.com/d3/d3-fetch)
+
+Convenience methods on top of the Fetch API.
+
+* [d3.blob](https://github.com/d3/d3-fetch/blob/master/README.md#blob) - get a file as a blob.
+* [d3.buffer](https://github.com/d3/d3-fetch/blob/master/README.md#buffer) - get a file as an array buffer.
+* [d3.csv](https://github.com/d3/d3-fetch/blob/master/README.md#csv) - get a comma-separated values (CSV) file.
+* [d3.dsv](https://github.com/d3/d3-fetch/blob/master/README.md#dsv) - get a delimiter-separated values (CSV) file.
+* [d3.image](https://github.com/d3/d3-fetch/blob/master/README.md#image) - get an image.
+* [d3.json](https://github.com/d3/d3-fetch/blob/master/README.md#json) - get a JSON file.
+* [d3.text](https://github.com/d3/d3-fetch/blob/master/README.md#text) - get a plain text file.
+* [d3.tsv](https://github.com/d3/d3-fetch/blob/master/README.md#tsv) - get a tab-separated values (TSV) file.
 
 ## [Forces (d3-force)](https://github.com/d3/d3-force)
 
@@ -396,6 +528,7 @@ Geographic projections, shapes and math.
 * [*projection*.stream](https://github.com/d3/d3-geo/blob/master/README.md#projection_stream) - wrap the specified stream to project geometry.
 * [*projection*.clipAngle](https://github.com/d3/d3-geo/blob/master/README.md#projection_clipAngle) - set the radius of the clip circle.
 * [*projection*.clipExtent](https://github.com/d3/d3-geo/blob/master/README.md#projection_clipExtent) - set the viewport clip extent, in pixels.
+* [*projection*.angle](https://github.com/d3/d3-geo/blob/master/README.md#projection_angle) - set the post-projection rotation.
 * [*projection*.scale](https://github.com/d3/d3-geo/blob/master/README.md#projection_scale) - set the scale factor.
 * [*projection*.translate](https://github.com/d3/d3-geo/blob/master/README.md#projection_translate) - set the translation offset.
 * [*projection*.fitExtent](https://github.com/d3/d3-geo/blob/master/README.md#projection_fitExtent) - set the scale and translate to fit a GeoJSON object.
@@ -418,6 +551,7 @@ Geographic projections, shapes and math.
 * [d3.geoConicEqualArea](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEqualArea) - the conic equal-area (Albers) projection.
 * [d3.geoConicEquidistant](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEquidistant) - the conic equidistant projection.
 * [*conic*.parallels](https://github.com/d3/d3-geo/blob/master/README.md#conic_parallels) - set the two standard parallels.
+* [d3.geoEqualEarth](https://github.com/d3/d3-geo/blob/master/README.md#geoEqualEarth) - the Equal Earth projection.
 * [d3.geoEquirectangular](https://github.com/d3/d3-geo/blob/master/README.md#geoEquirectangular) - the equirectangular (plate carreé) projection.
 * [d3.geoGnomonic](https://github.com/d3/d3-geo/blob/master/README.md#geoGnomonic) - the gnomonic projection.
 * [d3.geoMercator](https://github.com/d3/d3-geo/blob/master/README.md#geoMercator) - the spherical Mercator projection.
@@ -473,7 +607,7 @@ Geographic projections, shapes and math.
 * [*graticule*.precision](https://github.com/d3/d3-geo/blob/master/README.md#graticule_precision) - get or set the latitudinal precision.
 * [d3.geoGraticule10](https://github.com/d3/d3-geo/blob/master/README.md#geoGraticule10) - generate the default 10° global graticule.
 
-#### [Streams](https://github.com/d3/d3-geo/blob/master/README.md#streams)
+### [Streams](https://github.com/d3/d3-geo/blob/master/README.md#streams)
 
 * [d3.geoStream](https://github.com/d3/d3-geo/blob/master/README.md#geoStream) - convert a GeoJSON object to a geometry stream.
 * [*stream*.point](https://github.com/d3/d3-geo/blob/master/README.md#stream_point) - indicates a point with the specified coordinates.
@@ -578,8 +712,11 @@ Interpolate numbers, colors, strings, arrays, objects, whatever!
 * [d3.interpolateCubehelix](https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateCubehelix) - interpolate Cubehelix colors.
 * [d3.interpolateCubehelixLong](https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateCubehelixLong) - interpolate Cubehelix colors, the long way.
 * [*interpolate*.gamma](https://github.com/d3/d3-interpolate/blob/master/README.md#interpolate_gamma) - apply gamma correction during interpolation.
+* [d3.interpolateHue](https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateHue) - interpolate a hue angle.
+* [d3.interpolateDiscrete](https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateDiscrete) - generate a discrete interpolator from a set of values.
 * [d3.interpolateBasis](https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateBasis) - generate a B-spline through a set of values.
 * [d3.interpolateBasisClosed](https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateBasisClosed) - generate a closed B-spline through a set of values.
+* [d3.piecewise](https://github.com/d3/d3-interpolate/blob/master/README.md#piecewise) - generate a piecewise linear interpolator from a set of values.
 * [d3.quantize](https://github.com/d3/d3-interpolate/blob/master/README.md#quantize) - generate uniformly-spaced samples from an interpolator.
 
 ## [Paths (d3-path)](https://github.com/d3/d3-path)
@@ -628,16 +765,6 @@ Two-dimensional recursive spatial subdivision.
 * [*quadtree*.cover](https://github.com/d3/d3-quadtree/blob/master/README.md#quadtree_cover) - extend the quadtree to cover a point.
 * [*quadtree*.extent](https://github.com/d3/d3-quadtree/blob/master/README.md#quadtree_extent) - extend the quadtree to cover an extent.
 
-## [Queues (d3-queue)](https://github.com/d3/d3-queue)
-
-Evaluate asynchronous tasks with configurable concurrency.
-
-* [d3.queue](https://github.com/d3/d3-queue/blob/master/README.md#queue) - manage the concurrent evaluation of asynchronous tasks.
-* [*queue*.defer](https://github.com/d3/d3-queue/blob/master/README.md#queue_defer) - register a task for evaluation.
-* [*queue*.abort](https://github.com/d3/d3-queue/blob/master/README.md#queue_abort) - abort any active tasks and cancel any pending ones.
-* [*queue*.await](https://github.com/d3/d3-queue/blob/master/README.md#queue_await) - register a callback for when tasks complete.
-* [*queue*.awaitAll](https://github.com/d3/d3-queue/blob/master/README.md#queue_awaitAll) - register a callback for when tasks complete.
-
 ## [Random Numbers (d3-random)](https://github.com/d3/d3-random)
 
 Generate random numbers from various distributions.
@@ -649,30 +776,6 @@ Generate random numbers from various distributions.
 * [d3.randomIrwinHall](https://github.com/d3/d3-random/blob/master/README.md#randomIrwinHall) - from an Irwin–Hall distribution.
 * [d3.randomExponential](https://github.com/d3/d3-random/blob/master/README.md#randomExponential) - from an exponential distribution.
 * [*random*.source](https://github.com/d3/d3-random/blob/master/README.md#random_source) - set the source of randomness.
-
-## [Requests (d3-request)](https://github.com/d3/d3-request)
-
-A convenient alternative to asynchronous XMLHttpRequest.
-
-* [d3.request](https://github.com/d3/d3-request/blob/master/README.md#request) - make an asynchronous request.
-* [*request*.header](https://github.com/d3/d3-request/blob/master/README.md#request_header) - set a request header.
-* [*request*.user](https://github.com/d3/d3-request/blob/master/README.md#request_user) - set the user for authentication.
-* [*request*.password](https://github.com/d3/d3-request/blob/master/README.md#request_password) - set the password for authentication.
-* [*request*.mimeType](https://github.com/d3/d3-request/blob/master/README.md#request_mimeType) - set the MIME type.
-* [*request*.timeout](https://github.com/d3/d3-request/blob/master/README.md#request_timeout) - set the timeout in milliseconds.
-* [*request*.responseType](https://github.com/d3/d3-request/blob/master/README.md#request_responseType) - set the response type.
-* [*request*.response](https://github.com/d3/d3-request/blob/master/README.md#request_response) - set the response function.
-* [*request*.get](https://github.com/d3/d3-request/blob/master/README.md#request_get) - send a GET request.
-* [*request*.post](https://github.com/d3/d3-request/blob/master/README.md#request_post) - send a POST request.
-* [*request*.send](https://github.com/d3/d3-request/blob/master/README.md#request_send) - set the request.
-* [*request*.abort](https://github.com/d3/d3-request/blob/master/README.md#request_abort) - abort the request.
-* [*request*.on](https://github.com/d3/d3-request/blob/master/README.md#request_on) - listen for a request event.
-* [d3.csv](https://github.com/d3/d3-request/blob/master/README.md#csv) - get a comma-separated values (CSV) file.
-* [d3.html](https://github.com/d3/d3-request/blob/master/README.md#html) - get an HTML file.
-* [d3.json](https://github.com/d3/d3-request/blob/master/README.md#json) - get a JSON file.
-* [d3.text](https://github.com/d3/d3-request/blob/master/README.md#text) - get a plain text file.
-* [d3.tsv](https://github.com/d3/d3-request/blob/master/README.md#tsv) - get a tab-separated values (TSV) file.
-* [d3.xml](https://github.com/d3/d3-request/blob/master/README.md#xml) - get an XML file.
 
 ## [Scales (d3-scale)](https://github.com/d3/d3-scale)
 
@@ -689,6 +792,7 @@ Map a continuous, quantitative domain to a continuous range.
 * [*continuous*.rangeRound](https://github.com/d3/d3-scale/blob/master/README.md#continuous_rangeRound) - set the output range and enable rounding.
 * [*continuous*.clamp](https://github.com/d3/d3-scale/blob/master/README.md#continuous_clamp) - enable clamping to the domain or range.
 * [*continuous*.interpolate](https://github.com/d3/d3-scale/blob/master/README.md#continuous_interpolate) - set the output interpolator.
+* [*continuous*.unknown](https://github.com/d3/d3-scale/blob/master/README.md#continuous_unknown) - set the output value for unknown inputs.
 * [*continuous*.ticks](https://github.com/d3/d3-scale/blob/master/README.md#continuous_ticks) - compute representative values from the domain.
 * [*continuous*.tickFormat](https://github.com/d3/d3-scale/blob/master/README.md#continuous_tickFormat) - format ticks for human consumption.
 * [*continuous*.nice](https://github.com/d3/d3-scale/blob/master/README.md#continuous_nice) - extend the domain to nice round numbers.
@@ -721,6 +825,7 @@ Map a continuous, quantitative domain to a continuous range.
 * [*log*.tickFormat](https://github.com/d3/d3-scale/blob/master/README.md#log_tickFormat) - format ticks for human consumption.
 * [*log*.nice](https://github.com/d3/d3-scale/blob/master/README.md#log_nice) - extend the domain to nice round numbers.
 * [*log*.copy](https://github.com/d3/d3-scale/blob/master/README.md#log_copy) - create a copy of this scale.
+* [d3.scaleSymlog](https://github.com/d3/d3-scale/blob/master/README.md#scaleSymlog) - create a symmetric logarithmic scale.
 * [d3.scaleIdentity](https://github.com/d3/d3-scale/blob/master/README.md#identity) - create a quantitative identity scale.
 * [d3.scaleTime](https://github.com/d3/d3-scale/blob/master/README.md#scaleTime) - create a linear scale for time.
 * [*time*](https://github.com/d3/d3-scale/blob/master/README.md#_time) - compute the range value corresponding to a given domain value.
@@ -735,6 +840,7 @@ Map a continuous, quantitative domain to a continuous range.
 * [*time*.nice](https://github.com/d3/d3-scale/blob/master/README.md#time_nice) - extend the domain to nice round times.
 * [*time*.copy](https://github.com/d3/d3-scale/blob/master/README.md#time_copy) - create a copy of this scale.
 * [d3.scaleUtc](https://github.com/d3/d3-scale/blob/master/README.md#scaleUtc) - create a linear scale for UTC.
+* [d3.tickFormat](https://github.com/d3/d3-scale/blob/master/README.md#tickFormat) - format ticks for human consumption.
 
 ### [Sequential Scales](https://github.com/d3/d3-scale/blob/master/README.md#sequential-scales)
 
@@ -742,14 +848,22 @@ Map a continuous, quantitative domain to a continuous, fixed interpolator.
 
 * [d3.scaleSequential](https://github.com/d3/d3-scale/blob/master/README.md#scaleSequential) - create a sequential scale.
 * [*sequential*.interpolator](https://github.com/d3/d3-scale/blob/master/README.md#sequential_interpolator) - set the scale’s output interpolator.
-* [d3.interpolateViridis](https://github.com/d3/d3-scale/blob/master/README.md#interpolateViridis) - a dark-to-light color scheme.
-* [d3.interpolateInferno](https://github.com/d3/d3-scale/blob/master/README.md#interpolateInferno) - a dark-to-light color scheme.
-* [d3.interpolateMagma](https://github.com/d3/d3-scale/blob/master/README.md#interpolateMagma) - a dark-to-light color scheme.
-* [d3.interpolatePlasma](https://github.com/d3/d3-scale/blob/master/README.md#interpolatePlasma) - a dark-to-light color scheme.
-* [d3.interpolateWarm](https://github.com/d3/d3-scale/blob/master/README.md#interpolateWarm) - a rotating-hue color scheme.
-* [d3.interpolateCool](https://github.com/d3/d3-scale/blob/master/README.md#interpolateCool) - a rotating-hue color scheme.
-* [d3.interpolateRainbow](https://github.com/d3/d3-scale/blob/master/README.md#interpolateRainbow) - a cyclical rotating-hue color scheme.
-* [d3.interpolateCubehelixDefault](https://github.com/d3/d3-scale/blob/master/README.md#interpolateCubehelixDefault) - a dark-to-light, rotating-hue color scheme.
+* [d3.scaleSequentialLog](https://github.com/d3/d3-scale/blob/master/README.md#scaleSequentialLog) -
+* [d3.scaleSequentialPow](https://github.com/d3/d3-scale/blob/master/README.md#scaleSequentialPow) -
+* [d3.scaleSequentialSqrt](https://github.com/d3/d3-scale/blob/master/README.md#scaleSequentialSqrt) -
+* [d3.scaleSequentialSymlog](https://github.com/d3/d3-scale/blob/master/README.md#scaleSequentialSymlog) -
+* [d3.scaleSequentialQuantile](https://github.com/d3/d3-scale/blob/master/README.md#scaleSequentialQuantile) -
+
+### [Diverging Scales](https://github.com/d3/d3-scale/blob/master/README.md#diverging-scales)
+
+Map a continuous, quantitative domain to a continuous, fixed interpolator.
+
+* [d3.scaleDiverging](https://github.com/d3/d3-scale/blob/master/README.md#scaleDiverging) - create a diverging scale.
+* [*diverging*.interpolator](https://github.com/d3/d3-scale/blob/master/README.md#diverging_interpolator) - set the scale’s output interpolator.
+* [d3.scaleDivergingLog](https://github.com/d3/d3-scale/blob/master/README.md#scaleDivergingLog) -
+* [d3.scaleDivergingPow](https://github.com/d3/d3-scale/blob/master/README.md#scaleDivergingPow) -
+* [d3.scaleDivergingSqrt](https://github.com/d3/d3-scale/blob/master/README.md#scaleDivergingSqrt) -
+* [d3.scaleDivergingSymlog](https://github.com/d3/d3-scale/blob/master/README.md#scaleDivergingSymlog) -
 
 ### [Quantize Scales](https://github.com/d3/d3-scale/blob/master/README.md#quantize-scales)
 
@@ -813,10 +927,6 @@ Map a discrete domain to a discrete range.
 * [*point*.bandwidth](https://github.com/d3/d3-scale/blob/master/README.md#point_bandwidth) - returns zero.
 * [*point*.step](https://github.com/d3/d3-scale/blob/master/README.md#point_step) - get the distance between the starts of adjacent points.
 * [*point*.copy](https://github.com/d3/d3-scale/blob/master/README.md#point_copy) - create a copy of this scale.
-* [d3.schemeCategory10](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory10) - a categorical scheme with 10 colors.
-* [d3.schemeCategory20](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory20) - a categorical scheme with 20 colors.
-* [d3.schemeCategory20b](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory20b) - a categorical scheme with 20 colors.
-* [d3.schemeCategory20c](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory20c) - a categorical scheme with 20 colors.
 
 ## [Selections (d3-selection)](https://github.com/d3/d3-selection)
 
@@ -848,15 +958,18 @@ Transform the DOM by selecting elements and joining to data.
 * [*selection*.append](https://github.com/d3/d3-selection/blob/master/README.md#selection_append) - create, append and select new elements.
 * [*selection*.insert](https://github.com/d3/d3-selection/blob/master/README.md#selection_insert) - create, insert and select new elements.
 * [*selection*.remove](https://github.com/d3/d3-selection/blob/master/README.md#selection_remove) - remove elements from the document.
+* [*selection*.clone](https://github.com/d3/d3-selection/blob/master/README.md#selection_clone) - insert clones of selected elements.
 * [*selection*.sort](https://github.com/d3/d3-selection/blob/master/README.md#selection_sort) - sort elements in the document based on data.
 * [*selection*.order](https://github.com/d3/d3-selection/blob/master/README.md#selection_order) - reorders elements in the document to match the selection.
 * [*selection*.raise](https://github.com/d3/d3-selection/blob/master/README.md#selection_raise) - reorders each element as the last child of its parent.
 * [*selection*.lower](https://github.com/d3/d3-selection/blob/master/README.md#selection_lower) - reorders each element as the first child of its parent.
+* [d3.create](https://github.com/d3/d3-selection/blob/master/README.md#create) - create and select a detached element.
 * [d3.creator](https://github.com/d3/d3-selection/blob/master/README.md#creator) - create an element by name.
 
 ### [Joining Data](https://github.com/d3/d3-selection/blob/master/README.md#joining-data)
 
-* [*selection*.data](https://github.com/d3/d3-selection/blob/master/README.md#selection_data) - join elements to data.
+* [*selection*.data](https://github.com/d3/d3-selection/blob/master/README.md#selection_data) - bind elements to data.
+* [*selection*.join](https://github.com/d3/d3-selection/blob/master/README.md#selection_join) - enter, update or exit elements based on data.
 * [*selection*.enter](https://github.com/d3/d3-selection/blob/master/README.md#selection_enter) - get the enter selection (data missing elements).
 * [*selection*.exit](https://github.com/d3/d3-selection/blob/master/README.md#selection_exit) - get the exit selection (elements missing data).
 * [*selection*.datum](https://github.com/d3/d3-selection/blob/master/README.md#selection_datum) - get or set element data (without joining).
@@ -938,13 +1051,13 @@ A spline or polyline, as in a line chart.
 * [*line*.defined](https://github.com/d3/d3-shape/blob/master/README.md#line_defined) - set the defined accessor.
 * [*line*.curve](https://github.com/d3/d3-shape/blob/master/README.md#line_curve) - set the curve interpolator.
 * [*line*.context](https://github.com/d3/d3-shape/blob/master/README.md#line_context) - set the rendering context.
-* [d3.radialLine](https://github.com/d3/d3-shape/blob/master/README.md#radialLine) - create a new radial line generator.
-* [*radialLine*](https://github.com/d3/d3-shape/blob/master/README.md#_radialLine) - generate a line for the given dataset.
-* [*radialLine*.angle](https://github.com/d3/d3-shape/blob/master/README.md#radialLine_angle) - set the angle accessor.
-* [*radialLine*.radius](https://github.com/d3/d3-shape/blob/master/README.md#radialLine_radius) - set the radius accessor.
-* [*radialLine*.defined](https://github.com/d3/d3-shape/blob/master/README.md#radialLine_defined) - set the defined accessor.
-* [*radialLine*.curve](https://github.com/d3/d3-shape/blob/master/README.md#radialLine_curve) - set the curve interpolator.
-* [*radialLine*.context](https://github.com/d3/d3-shape/blob/master/README.md#radialLine_context) - set the rendering context.
+* [d3.lineRadial](https://github.com/d3/d3-shape/blob/master/README.md#lineRadial) - create a new radial line generator.
+* [*lineRadial*](https://github.com/d3/d3-shape/blob/master/README.md#_lineRadial) - generate a line for the given dataset.
+* [*lineRadial*.angle](https://github.com/d3/d3-shape/blob/master/README.md#lineRadial_angle) - set the angle accessor.
+* [*lineRadial*.radius](https://github.com/d3/d3-shape/blob/master/README.md#lineRadial_radius) - set the radius accessor.
+* [*lineRadial*.defined](https://github.com/d3/d3-shape/blob/master/README.md#lineRadial_defined) - set the defined accessor.
+* [*lineRadial*.curve](https://github.com/d3/d3-shape/blob/master/README.md#lineRadial_curve) - set the curve interpolator.
+* [*lineRadial*.context](https://github.com/d3/d3-shape/blob/master/README.md#lineRadial_context) - set the rendering context.
 
 ### [Areas](https://github.com/d3/d3-shape/blob/master/README.md#areas)
 
@@ -1023,6 +1136,7 @@ A smooth cubic Bézier curve from a source to a target.
 * [*link*.target](https://github.com/d3/d3-shape/blob/master/README.md#link_target) - set the target accessor.
 * [*link*.x](https://github.com/d3/d3-shape/blob/master/README.md#link_x) - set the point *x*-accessor.
 * [*link*.y](https://github.com/d3/d3-shape/blob/master/README.md#link_y) - set the point *y*-accessor.
+* [*link*.context](https://github.com/d3/d3-shape/blob/master/README.md#link_context) - set the rendering context.
 * [d3.linkRadial](https://github.com/d3/d3-shape/blob/master/README.md#linkRadial) - create a new radial link generator.
 * [*radialLink*.angle](https://github.com/d3/d3-shape/blob/master/README.md#radialLink_angle) - set the point *angle* accessor.
 * [*radialLink*.radius](https://github.com/d3/d3-shape/blob/master/README.md#radialLink_radius) - set the point *radius* accessor.
@@ -1044,6 +1158,7 @@ A categorical shape encoding, as in a scatterplot.
 * [d3.symbolStar](https://github.com/d3/d3-shape/blob/master/README.md#symbolStar) - a pentagonal star (pentagram).
 * [d3.symbolTriangle](https://github.com/d3/d3-shape/blob/master/README.md#symbolTriangle) - an up-pointing triangle.
 * [d3.symbolWye](https://github.com/d3/d3-shape/blob/master/README.md#symbolWye) - a Y shape.
+* [d3.pointRadial](https://github.com/d3/d3-shape/blob/master/README.md#pointRadial) -
 * [*symbolType*.draw](https://github.com/d3/d3-shape/blob/master/README.md#symbolType_draw) - draw this symbol to the given context.
 
 ### [Stacks](https://github.com/d3/d3-shape/blob/master/README.md#stacks)
@@ -1056,9 +1171,10 @@ Stack shapes, placing one adjacent to another, as in a stacked bar chart.
 * [*stack*.value](https://github.com/d3/d3-shape/blob/master/README.md#stack_value) - set the value accessor.
 * [*stack*.order](https://github.com/d3/d3-shape/blob/master/README.md#stack_order) - set the order accessor.
 * [*stack*.offset](https://github.com/d3/d3-shape/blob/master/README.md#stack_offset) - set the offset accessor.
+* [d3.stackOrderAppearance](https://github.com/d3/d3-shape/blob/master/README.md#stackOrderAppearance) - put the earliest series on bottom.
 * [d3.stackOrderAscending](https://github.com/d3/d3-shape/blob/master/README.md#stackOrderAscending) - put the smallest series on bottom.
 * [d3.stackOrderDescending](https://github.com/d3/d3-shape/blob/master/README.md#stackOrderDescending) - put the largest series on bottom.
-* [d3.stackOrderInsideOut](https://github.com/d3/d3-shape/blob/master/README.md#stackOrderInsideOut) - put larger series in the middle.
+* [d3.stackOrderInsideOut](https://github.com/d3/d3-shape/blob/master/README.md#stackOrderInsideOut) - put earlier series in the middle.
 * [d3.stackOrderNone](https://github.com/d3/d3-shape/blob/master/README.md#stackOrderNone) - use the given series order.
 * [d3.stackOrderReverse](https://github.com/d3/d3-shape/blob/master/README.md#stackOrderReverse) - use the reverse of the given series order.
 * [d3.stackOffsetExpand](https://github.com/d3/d3-shape/blob/master/README.md#stackOffsetExpand) - normalize the baseline to zero and topline to one.
@@ -1161,6 +1277,7 @@ Animated transitions for [selections](#selections).
 * [*transition*.empty](https://github.com/d3/d3-transition/blob/master/README.md#transition_empty) - returns true if this transition is empty.
 * [*transition*.each](https://github.com/d3/d3-transition/blob/master/README.md#transition_each) - call a function for each element.
 * [*transition*.on](https://github.com/d3/d3-transition/blob/master/README.md#transition_on) - add or remove transition event listeners.
+* [*transition*.end](https://github.com/d3/d3-transition/blob/master/README.md#transition_on) - await the end of a transition.
 * [*transition*.attr](https://github.com/d3/d3-transition/blob/master/README.md#transition_attr) - tween the given attribute using the default interpolator.
 * [*transition*.attrTween](https://github.com/d3/d3-transition/blob/master/README.md#transition_attrTween) - tween the given attribute using a custom interpolator.
 * [*transition*.style](https://github.com/d3/d3-transition/blob/master/README.md#transition_style) - tween the given style property using the default interpolator.
