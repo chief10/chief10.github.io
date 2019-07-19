@@ -91,6 +91,9 @@ option + tab
 `git fetch origin pull/ID/head:BRANCHNAME`
 - Where `id` is equal to the PR ID
 
+- `git bisect`
+- Find which commit introduced a bug
+
 When you make changes you want to revert.
 http://stackoverflow.com/questions/4114095/how-to-revert-git-repository-to-a-previous-commit
 git revert --no-commit 0766c053..HEAD
