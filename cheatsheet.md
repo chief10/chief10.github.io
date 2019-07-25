@@ -91,7 +91,7 @@ option + tab
 `git fetch origin pull/ID/head:BRANCHNAME`
 - Where `id` is equal to the PR ID
 
-- `git bisect`
+`git bisect`
 - Find which commit introduced a bug
 
 When you make changes you want to revert.
