@@ -149,3 +149,8 @@ https://github.com/ClickTripz/clicktripz.web/pull/2891/files?w=1
 `Ctrl + Cmd + Q`
 - Quick sleep
 
+
+### Ubuntu
+
+`Shift + Optn/Win + Left/Right`
+- Move the current window to another monitor
