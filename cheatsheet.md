@@ -94,6 +94,12 @@ option + tab
 `git bisect`
 - Find which commit introduced a bug
 
+`git clean -dn`
+- Dry-run check of which untracked files will be deleted
+
+`git clean -df`
+- Remove untracked files from git
+
 When you make changes you want to revert.
 http://stackoverflow.com/questions/4114095/how-to-revert-git-repository-to-a-previous-commit
 git revert --no-commit 0766c053..HEAD
