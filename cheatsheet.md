@@ -100,6 +100,21 @@ option + tab
 `git clean -df`
 - Remove untracked files from git
 
+`git describe --tags --abbrev=0`
+- See last tag
+
+`git pull upstream --tags`
+- Update your local tags with remote ones
+
+`git show-ref --tags`
+- Show which commit is associated with which tags.
+
+`git fetch upstream --tags -f`
+- This command will get the latest tags from upstream
+
+`git push --delete upstream vx.x.x`
+- where `vx.x.x` is the version of the tag we want to delete
+
 When you make changes you want to revert.
 http://stackoverflow.com/questions/4114095/how-to-revert-git-repository-to-a-previous-commit
 git revert --no-commit 0766c053..HEAD
