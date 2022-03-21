@@ -115,6 +115,9 @@ option + tab
 `git push --delete upstream vx.x.x`
 - where `vx.x.x` is the version of the tag we want to delete
 
+`git fetch --tags -f
+- Gets rid of `(would clobber existing tag)` issue; updates local tags with remote
+
 When you make changes you want to revert.
 http://stackoverflow.com/questions/4114095/how-to-revert-git-repository-to-a-previous-commit
 git revert --no-commit 0766c053..HEAD
