@@ -115,6 +115,9 @@ option + tab
 `git push --delete upstream vx.x.x`
 - where `vx.x.x` is the version of the tag we want to delete
 
+`git branch | grep -v "development" | xargs git branch -fd`
+- Lists all branches without the "development" word in them and use those branches as arguments for the following "delete" command
+
 `git fetch --tags -f`
 - Gets rid of `(would clobber existing tag)` issue; updates local tags with remote
 
