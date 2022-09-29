@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
-    "d3": "^5.9.1",
+    "d3": "^7.6.1",
     "webpack": "^4.29.6"
   },
   "devDependencies": {},
